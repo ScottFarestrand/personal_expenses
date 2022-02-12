@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import './widgets/new_transaction.dart';
 import './widgets/transaction_list.dart';
-import 'models/transaction.dart';
+import './models/transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,21 +15,26 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.purple,
           accentColor: Colors.amber,
           fontFamily: 'Quicksand',
-          textTheme: ThemeData.light().textTheme.copyWith(
-            title: TextStyle(
-              fontFamily: 'OpenSans',
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
-          ),
+          // textTheme: ThemeData.light().textTheme.copyWith(
+          //   title: TextStyle(
+          //     fontFamily: 'OpenSans',
+          //     fontWeight: FontWeight.bold,
+          //     fontSize: 18,
+          //   ),
+          // ),
           appBarTheme: AppBarTheme(
-            textTheme: ThemeData.light().textTheme.copyWith(
-              title: TextStyle(
-                fontFamily: 'OpenSans',
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+            titleTextStyle: TextStyle(
+              fontFamily: 'OpenSans',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
+            // textTheme: ThemeData.light().textTheme.copyWith(
+            //   title: TextStyle(
+            //     fontFamily: 'OpenSans',
+            //     fontSize: 20,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
           )),
       home: MyHomePage(),
     );
@@ -124,4 +129,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
