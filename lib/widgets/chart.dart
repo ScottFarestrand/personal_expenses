@@ -22,8 +22,6 @@ class Chart extends StatelessWidget {
             dailyTotal +=recentTransactions[i].amount;
           }
         }
-      // print(DateFormat.E().format(weekDay));
-      print(dailyTotal);
       return {'day': DateFormat.E().format(weekDay), 'amount': dailyTotal,};
       }).toList();
   }
@@ -37,22 +35,25 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(groupedTransactions);
-    print('Weekly Total');
-    print(weeklyTotal);
+
     return Card(
     elevation: 6,
     margin: EdgeInsets.all(20),
     // child: ch
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: groupedTransactions.map((tx) {
-      // return  Text('${tx['day'] : ${tx['amount'].toString()}'');
-      // return Text('${tx['day']} : ${tx['amount'].toString()}');
-      // return ChartBar(tx['day'], tx['amount']);
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: groupedTransactions.map((tx) {
+        // return  Text('${tx['day'] : ${tx['amount'].toString()}'');
+        // return Text('${tx['day']} : ${tx['amount'].toString()}');
+        // return ChartBar(tx['day'], tx['amount']);
 
-      return ChartBar(tx['day'], tx['amount'], (tx['amount'] as double)  / weeklyTotal);
-    }).toList(),),
+        return Flexible(
+          fit: FlexFit.tight,
+            child: ChartBar(tx['day'], tx['amount'], (tx['amount'] as double)  / weeklyTotal));
+      }).toList(),),
+    ),
     );
   }
 }
