@@ -23,7 +23,7 @@ class Chart extends StatelessWidget {
           }
         }
       return {'day': DateFormat.E().format(weekDay), 'amount': dailyTotal,};
-      }).toList();
+      }).reversed.toList();
   }
 
   double get weeklyTotal {
@@ -39,7 +39,6 @@ class Chart extends StatelessWidget {
     return Card(
     elevation: 6,
     margin: EdgeInsets.all(20),
-    // child: ch
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(

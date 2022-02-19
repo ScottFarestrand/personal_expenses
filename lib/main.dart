@@ -42,31 +42,31 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't1',
       title: 'New Shoes',
-      amount: 400.0,
+      amount: 92.89,
       date: DateTime.now().subtract(Duration(days: 0)),
     ),
     Transaction(
       id: 't2',
       title: 'Weekly Groceries',
-      amount: 400.0,
+      amount: 40.0,
       date: DateTime.now().subtract(Duration(days: 1)),
     ),
     Transaction(
       id: 't3',
       title: 'Tires',
-      amount: 300.00,
+      amount: 30.00,
       date: DateTime.now().subtract(Duration(days: 2)),
     ),
     Transaction(
       id: 't4',
       title: 'Clothes',
-      amount: 200.00,
+      amount: 20.00,
       date: DateTime.now().subtract(Duration(days: 3)),
     ),
     Transaction(
       id: 't5',
       title: 'Gym Dues',
-      amount: 100.00,
+      amount: 10.00,
       date: DateTime.now().subtract(Duration(days: 4)),
     ),
     Transaction(
@@ -78,13 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't7',
       title: 'Dining out',
-      amount: 500.00,
+      amount: 50.00,
       date: DateTime.now().subtract(Duration(days: 6)),
     ),
     Transaction(
       id: 't8',
       title: 'Gas',
-      amount: 500.00,
+      amount: 50.00,
       date: DateTime.now().subtract(Duration(days: 7  )),
     ),
   ];

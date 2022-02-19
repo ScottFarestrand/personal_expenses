@@ -12,10 +12,14 @@ class ChartBar extends StatelessWidget {
   // ChartBar(this.label, this.amount);
   @override
   Widget build(BuildContext context) {
+    print(pctOfTotal);
     return Column(
       children: [
-        FittedBox(
-            child: Text('\$${amount.toStringAsFixed(0)}')),
+        Container(
+          height:  20,
+          child: FittedBox(
+              child: Text('\$${amount.toStringAsFixed(0)}')),
+        ),
         SizedBox(height: 4),
         Container(
           height: 60,
