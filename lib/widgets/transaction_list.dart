@@ -5,13 +5,19 @@ import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
+  final Function deleteTransaction;
 
-  TransactionList(this.transactions);
+  TransactionList(this.transactions, this.deleteTransaction);
 
   @override
   Widget build(BuildContext context) {
+    if (transactions.isEmpty) {
+      print('emtpy');
+    } else {
+      print('Not Empty');
+    }
     return Container(
-      height: 300,
+      height: 450,
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
@@ -50,6 +56,13 @@ class TransactionList extends StatelessWidget {
                         ),
                       ),
                     ),
+                    trailing:
+                      IconButton(icon: Icon(Icons.delete), color: Theme.of(context).errorColor,
+                      // onPressed: () => deleteTransaction(transactions[index].id),
+                        onPressed: (){
+                        deleteTransaction(transactions[index].id);
+                      }
+                      ),
                     title: Text(
                       transactions[index].title,
                       style: Theme.of(context).textTheme.titleMedium),
