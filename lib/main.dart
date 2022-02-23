@@ -40,57 +40,57 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String titleInput;
   String amountInput;
-  // final List<Transaction> _userTransactions = [];
-  final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 92.89,
-      date: DateTime.now().subtract(Duration(days: 0)),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Weekly Groceries',
-      amount: 40.0,
-      date: DateTime.now().subtract(Duration(days: 1)),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'Tires',
-      amount: 30.00,
-      date: DateTime.now().subtract(Duration(days: 2)),
-    ),
-    Transaction(
-      id: 't4',
-      title: 'Clothes',
-      amount: 20.00,
-      date: DateTime.now().subtract(Duration(days: 3)),
-    ),
-    Transaction(
-      id: 't5',
-      title: 'Gym Dues',
-      amount: 10.00,
-      date: DateTime.now().subtract(Duration(days: 4)),
-    ),
-    Transaction(
-      id: 't6',
-      title: 'Coffee',
-      amount: 50.0,
-      date: DateTime.now().subtract(Duration(days: 5)),
-    ),
-    Transaction(
-      id: 't7',
-      title: 'Dining out',
-      amount: 50.00,
-      date: DateTime.now().subtract(Duration(days: 6)),
-    ),
-    Transaction(
-      id: 't8',
-      title: 'Gas',
-      amount: 50.00,
-      date: DateTime.now().subtract(Duration(days: 7  )),
-    ),
-  ];
+  final List<Transaction> _userTransactions = [];
+  // final List<Transaction> _userTransactions = [
+  //   Transaction(
+  //     id: 't1',
+  //     title: 'New Shoes',
+  //     amount: 92.89,
+  //     date: DateTime.now().subtract(Duration(days: 0)),
+  //   ),
+  //   Transaction(
+  //     id: 't2',
+  //     title: 'Weekly Groceries',
+  //     amount: 40.0,
+  //     date: DateTime.now().subtract(Duration(days: 1)),
+  //   ),
+  //   Transaction(
+  //     id: 't3',
+  //     title: 'Tires',
+  //     amount: 30.00,
+  //     date: DateTime.now().subtract(Duration(days: 2)),
+  //   ),
+  //   Transaction(
+  //     id: 't4',
+  //     title: 'Clothes',
+  //     amount: 20.00,
+  //     date: DateTime.now().subtract(Duration(days: 3)),
+  //   ),
+  //   Transaction(
+  //     id: 't5',
+  //     title: 'Gym Dues',
+  //     amount: 10.00,
+  //     date: DateTime.now().subtract(Duration(days: 4)),
+  //   ),
+  //   Transaction(
+  //     id: 't6',
+  //     title: 'Coffee',
+  //     amount: 50.0,
+  //     date: DateTime.now().subtract(Duration(days: 5)),
+  //   ),
+  //   Transaction(
+  //     id: 't7',
+  //     title: 'Dining out',
+  //     amount: 50.00,
+  //     date: DateTime.now().subtract(Duration(days: 6)),
+  //   ),
+  //   Transaction(
+  //     id: 't8',
+  //     title: 'Gas',
+  //     amount: 50.00,
+  //     date: DateTime.now().subtract(Duration(days: 7  )),
+  //   ),
+  // ];
 
   // List<Transaction> get _recentTransactions {
   //   return _userTransactions.where((tx) {
