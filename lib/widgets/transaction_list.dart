@@ -17,7 +17,6 @@ class TransactionList extends StatelessWidget {
       print('Not Empty');
     }
     return Container(
-      height: 450,
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
