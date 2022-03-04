@@ -13,44 +13,43 @@ class NewTransaction extends StatefulWidget {
 class _NewTransactionState extends State<NewTransaction> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
-  DateTime _newTransactionDate ;
+  DateTime _selectedDate;
 
   void _submitData() {
-    final enteredTitle = _titleController.text;
-    final enteredAmount = double.parse(_amountController.text);
-    final transactionDate = _newTransactionDate;
-    if (enteredTitle.isEmpty || enteredAmount <= 0) {
+    if (_amountController.text.isEmpty) {
       return;
     }
-    if (_newTransactionDate == null){
+    final enteredTitle = _titleController.text;
+    final enteredAmount = double.parse(_amountController.text);
+
+    if (enteredTitle.isEmpty || enteredAmount <= 0 || _selectedDate == null) {
       return;
     }
 
     widget.addTx(
       enteredTitle,
       enteredAmount,
-      transactionDate,
-
+      _selectedDate,
     );
 
     Navigator.of(context).pop();
   }
 
-  void _presentDataPicker(){
+  void _presentDatePicker() {
     showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime.now().subtract(Duration(days: 45)),
-        lastDate: DateTime.now()
-    ).then((value) {
-      if ( value == null){
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2019),
+      lastDate: DateTime.now(),
+    ).then((pickedDate) {
+      if (pickedDate == null) {
         return;
       }
       setState(() {
-        _newTransactionDate = value;
+        _selectedDate = pickedDate;
       });
-
     });
+    print('...');
   }
 
   @override
@@ -80,24 +79,39 @@ class _NewTransactionState extends State<NewTransaction> {
             Container(
               height: 70,
               child: Row(
-                children: [
-                  Text(_newTransactionDate ==  null
-                      ? 'No Date Chosen'
-                      : DateFormat.yMd().format(_newTransactionDate),
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      _selectedDate == null
+                          ? 'No Date Chosen!'
+                          : 'Picked Date: ${DateFormat.yMd().format(_selectedDate)}',
+                    ),
                   ),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                      onPressed: _presentDataPicker,
-                      child: Text('Choose Date', style: TextStyle(fontWeight: FontWeight.bold),),
+                  TextButton(
+                    // textColor: Theme.of(context).primaryColor,
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onPressed: _presentDatePicker,
                   ),
                 ],
               ),
             ),
-            RaisedButton(
-              child: Text('Add Transaction',),
-             color: Theme.of(context).primaryColor,
-              onPressed: _submitData,
+            ElevatedButton(
+                onPressed: _submitData,
+                child: Text('Add Transaction'),
+              style: ButtonStyle(
+              ),
             ),
+            // RaisedButton(
+            //   child: Text('Add Transaction'),
+            //   color: Theme.of(context).primaryColor,
+            //   textColor: Theme.of(context).textTheme.button.color,
+            //   onPressed: _submitData,
+            // ),
           ],
         ),
       ),
